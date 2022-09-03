@@ -10,8 +10,8 @@ to be added.
 
 ## Project Documents
 
-All project documents are in the [Project Wiki](../../wiki/Home).
+All project documents are in the [Project Wiki](https://github.com/panitnt/ku-polls/wiki).
 
-- [Vision Statement](../../wiki/Vision%20Statement)
+- [Vision Statement](https://github.com/panitnt/ku-polls/wiki/Vision-Statement)
 
-[django-tutorial]: TODO-write-the-tutorial-URL-here
+[django-tutorial]: (https://www.djangoproject.com/)
