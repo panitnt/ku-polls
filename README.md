@@ -13,5 +13,6 @@ to be added.
 All project documents are in the [Project Wiki](https://github.com/panitnt/ku-polls/wiki).
 
 - [Vision Statement](https://github.com/panitnt/ku-polls/wiki/Vision-Statement)
-
-[django-tutorial]: (https://www.djangoproject.com/)
+- [Requirements](https://github.com/panitnt/ku-polls/wiki/Requirements)
+- [Development Plan](https://github.com/panitnt/ku-polls/wiki/Development-Plan)
+Iteration 1 Plan and Task Board (TODO - valid link to task board)
