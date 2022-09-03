@@ -15,4 +15,4 @@ All project documents are in the [Project Wiki](https://github.com/panitnt/ku-po
 - [Vision Statement](https://github.com/panitnt/ku-polls/wiki/Vision-Statement)
 - [Requirements](https://github.com/panitnt/ku-polls/wiki/Requirements)
 - [Development Plan](https://github.com/panitnt/ku-polls/wiki/Development-Plan)
-Iteration 1 Plan and Task Board (TODO - valid link to task board)
+- [Iteration 1 Plan](https://github.com/panitnt/ku-polls/wiki/Iteration-1-Plan)
