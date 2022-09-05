@@ -62,7 +62,7 @@ class QuestionIndexViewTests(TestCase):
         self.assertQuerysetEqual(
             response.context['latest_question_list'], [question])
 
-    def test_two_past_qustion(self):
+    def test_two_past_question(self):
         """The questions index page may display multiple questions."""
         question1 = create_question(question_text="Past question 1.", days=-30)
         question2 = create_question(
