@@ -1,0 +1,39 @@
+li a {
+    color: #6E85B7;
+}
+
+body {
+    background: #FFF9E8 url("images/background.png") no-repeat;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 2%;
+}
+
+.button-vote {
+    background-color: #F08080;
+}
+
+.button-vote:hover {
+    background-color: #EAEDED;
+}
+
+.question-title-detail {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-style: italic;
+    color: #CD5C5C	;
+}
+.question-title-result {
+    font-size: 54px;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-style: italic;
+}
+.result-div h1{
+    color: #FF7C7C;
+    text-align: center;
+}
+#legend1 {
+    color: #FA8072	;
+    background-color: #F5F5F5;
+}
