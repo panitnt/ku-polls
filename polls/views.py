@@ -28,6 +28,13 @@ from polls.models import Choice, Question
 
 # generic views
 class IndexView(generic.ListView):
+    """
+    This is IndexView that displays a list of questions.
+
+    Attributes:
+        template_name: The name of the template used to render the index
+        context_object_name: The name of the context objects
+    """
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
@@ -37,12 +44,35 @@ class IndexView(generic.ListView):
 
 
 class DetailView(generic.DetailView):
+    """
+    This is DetailView that displays a question with a choice.
+
+    Attributes:
+        model: Question class
+        template_name: The name of the template used to render to detail
+    """
     model = Question
     template_name = 'polls/detail.html'
 
     def get_queryset(self):
         """Excludes any questions that aren't published yet."""
         return Question.objects.filter(pub_date__lte=timezone.now())
+
+    def get(self, request, pk):
+        """Excludes any questions that aren't published yet and except error."""
+        redirect = HttpResponseRedirect(reverse('polls:index'))
+        try:
+            self.question = get_object_or_404(Question, pk=pk)
+        except IndexError:
+            messages.error(request,'Index not found')
+            return redirect
+        except Http404:
+            messages.error(request, 'Http404 not found')
+            return redirect
+        if not self.question.can_vote():
+            messages.error(request, "This question can't vote")
+            return redirect
+        return super().get(request, pk=pk)
 
 
 class ResultsView(generic.DetailView):
