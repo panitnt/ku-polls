@@ -16,3 +16,4 @@ All project documents are in the [Project Wiki](https://github.com/panitnt/ku-po
 - [Requirements](https://github.com/panitnt/ku-polls/wiki/Requirements)
 - [Development Plan](https://github.com/panitnt/ku-polls/wiki/Development-Plan)
 - [Iteration 1 Plan](https://github.com/panitnt/ku-polls/wiki/Iteration-1-Plan)
+- [Iteration 2 Plan](https://github.com/panitnt/ku-polls/wiki/Iteration-2-Plan)
