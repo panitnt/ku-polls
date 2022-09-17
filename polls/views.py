@@ -7,8 +7,13 @@ from django.template import loader
 from django.urls import reverse
 from django.views import generic
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 from polls.models import Choice, Question
+
 
 # This is more code than generic views
 # def index(request):
@@ -43,7 +48,7 @@ class IndexView(generic.ListView):
         return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 
-class DetailView(generic.DetailView):
+class DetailView(LoginRequiredMixin, generic.DetailView):
     """DetailView can displays a question with a choice.
 
     Attributes:
@@ -97,13 +102,16 @@ class ResultsView(generic.DetailView):
 
 
 # same with original
+@login_required
 def vote(request, question_id):
     """To vote a choice for each question.
 
     args:
         question_id: Id of this question.
     """
-
+    user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
