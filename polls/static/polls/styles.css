@@ -8,6 +8,9 @@ body {
     margin: 0px;
     padding: 2%;
 }
+.log-button {
+    float: right;
+}
 
 .button-vote {
     background-color: #F08080;

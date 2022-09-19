@@ -7,6 +7,12 @@
     rel="stylesheet">
 
 <h1>KU-polls</h1>
+<div class="log-button">
+    <button><a href="{% url 'login' %}">login</a></button>
+    {{request.user.username}}
+    <button><a href="{% url 'logout' %}">logout</a></button>
+</div>
+
 {% if latest_question_list %}
 {% for question in latest_question_list %}
 <div class="show-question">
