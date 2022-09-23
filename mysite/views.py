@@ -18,4 +18,4 @@ def signup(request):
         # we should display a message in signup.html
     else:
         form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form':form})
+    return render(request, 'registration/signup.html', {'form': form})

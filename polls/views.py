@@ -6,11 +6,7 @@ from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render, redirect
 from polls.models import Choice, Question, Vote
-import logging
 
 
 # generic views
@@ -26,8 +22,9 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
-        """Return the last five published questions (not including those set to be published in the future)."""
-        return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+        """Return the last five published questions (not including future)."""
+        question = Question.objects.filter(pub_date__lte=timezone.now())
+        return question.order_by('-pub_date')[:5]
 
 
 class DetailView(LoginRequiredMixin, generic.DetailView):
@@ -66,14 +63,15 @@ class DetailView(LoginRequiredMixin, generic.DetailView):
             messages.error(request, 'Http404 not found')
             return redirect
         try:
-            self.check_vote = Vote.objects.filter(user=request.user)[0].choice.choice_text
+            self.check_vote = Vote.objects.filter(user=request.user)[0]
+            self.check_vote = self.check_vote.choice.choice_text
         except IndexError:
             self.check_vote = None
         if not self.question.can_vote():
             messages.error(request, "This question can't vote")
             return redirect
-        return render(request, 'polls/detail.html',{'question': self.question, 'check_choice': self.check_vote})
-        # return super().get(request, pk=pk)
+        dict_re = {'question': self.question, 'check_choice': self.check_vote}
+        return render(request, 'polls/detail.html', dict_re)
 
 
 class ResultsView(generic.DetailView):
@@ -103,22 +101,25 @@ def vote(request, question_id):
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
-        return render(request, 'polls/detail.html', {'question': question, 'error_message': "You didn't select a choice"})
+        dict_return = {'question': question}
+        dict_return['error_message'] = "You didn't select a choice"
+        return render(request, 'polls/detail.html', dict_return)
     else:
         if not question.can_vote():
             messages.error(request, 'User cannot vote')
             return HttpResponseRedirect(reverse('polls:index'))
-        check_vote = Vote.objects.filter(user=request.user, choice__question=question)
-        vote = check_vote
-        if check_vote.count() == 0:
+        chk = Vote.objects.filter(user=request.user, choice__question=question)
+        vote = chk
+        if chk.count() == 0:
             vote = Vote(user=user, choice=selected_choice)
         else:
-            vote = check_vote[0]
+            vote = chk[0]
             vote.choice = selected_choice
         vote.save()
-        return HttpResponseRedirect(reverse('polls:results', args=[question.id],))
+        reverse_result = reverse('polls:results', args=[question.id],)
+        return HttpResponseRedirect(reverse_result)
 
 
-def redirect(self):
+def redirect_index(self):
     """Redirect to index page."""
     return HttpResponseRedirect(reverse('polls:index'))
