@@ -14,6 +14,8 @@ This application is part of the [Individual Software Process](https://cpske.gith
 
     ```cd ku-polls```
 
+- Create `.env` file. Content same as sample.env file
+
 - Create a new environment
 
     ```python -m venv env```
@@ -25,6 +27,14 @@ This application is part of the [Individual Software Process](https://cpske.gith
 - To install requirements of this projects in environment
 
     ```pip install -r requirements.txt```
+
+- Create a new database by running migrations.
+
+    ```python manage.py migrate```
+
+- Import data using loaddata.
+
+    ```python manage.py loaddata data/filename.json```
 
 - To run this program
 
