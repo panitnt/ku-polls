@@ -14,7 +14,15 @@ This application is part of the [Individual Software Process](https://cpske.gith
 
     ```cd ku-polls```
 
-- To install requirements of this projects
+- Create a new environment
+
+    ```python -m venv env```
+
+- Start the virtual env in bash or zsh
+
+    ```. env/bin/activate```
+
+- To install requirements of this projects in environment
 
     ```pip install -r requirements.txt```
 
