@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from polls.views import redirect
+from polls.views import redirect_index
 from . import views
 
 urlpatterns = [
-    path('', redirect),
+    path('', redirect_index),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),

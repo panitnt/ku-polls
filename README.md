@@ -14,9 +14,27 @@ This application is part of the [Individual Software Process](https://cpske.gith
 
     ```cd ku-polls```
 
-- To install requirements of this projects
+- Create `.env` file. Content same as sample.env file
+
+- Create a new environment
+
+    ```python -m venv env```
+
+- Start the virtual env in bash or zsh
+
+    ```. env/bin/activate```
+
+- To install requirements of this projects in environment
 
     ```pip install -r requirements.txt```
+
+- Create a new database by running migrations.
+
+    ```python manage.py migrate```
+
+- Import data using loaddata.
+
+    ```python manage.py loaddata data/filename.json```
 
 - To run this program
 
@@ -32,6 +50,7 @@ All project documents are in the [Project Wiki](https://github.com/panitnt/ku-po
 - [Iteration 1 Plan](https://github.com/panitnt/ku-polls/wiki/Iteration-1-Plan) | [Iteration 1 Board](https://github.com/users/panitnt/projects/2/views/5)
 - [Iteration 2 Plan](https://github.com/panitnt/ku-polls/wiki/Iteration-2-Plan) | [Iteration 2 Board](https://github.com/users/panitnt/projects/2/views/8)
 - [Iteration 3 Plan](https://github.com/panitnt/ku-polls/wiki/Iteration-3-Plan) | [Iteration 3 Board](https://github.com/users/panitnt/projects/2/views/9)
+- [Iteration 4 Plan](https://github.com/panitnt/ku-polls/wiki/Iteration-4-Plan) | [Iteration 4 Board](https://github.com/users/panitnt/projects/2/views/10)
 
 ## User-demo
 | Username  | Password  |

@@ -1,0 +1,132 @@
+[
+{
+  "model": "polls.question",
+  "pk": 2,
+  "fields": {
+    "question_text": "How do you think about online study?",
+    "pub_date": "2022-09-05T15:36:59.169Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 3,
+  "fields": {
+    "question_text": "Do you think that KU-shuttle bus are enough for students?",
+    "pub_date": "2022-09-05T15:56:16.934Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 6,
+  "fields": {
+    "question": 2,
+    "choice_text": "So so. Sometimes onsite be more effective to study."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 7,
+  "fields": {
+    "question": 2,
+    "choice_text": "No online class! It's distracted."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 8,
+  "fields": {
+    "question": 2,
+    "choice_text": "I want a hybrid-learning that can review after the class."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 9,
+  "fields": {
+    "question": 2,
+    "choice_text": "It's good! I want to study online."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 10,
+  "fields": {
+    "question": 2,
+    "choice_text": "other"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 11,
+  "fields": {
+    "question": 3,
+    "choice_text": "Yes, it enough"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 12,
+  "fields": {
+    "question": 3,
+    "choice_text": "No, I think need to add more."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 13,
+  "fields": {
+    "question": 3,
+    "choice_text": "So so. But if can add more may be good."
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 17,
+  "fields": {
+    "user": 4,
+    "choice": 13
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 18,
+  "fields": {
+    "user": 4,
+    "choice": 7
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 19,
+  "fields": {
+    "user": 5,
+    "choice": 6
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 20,
+  "fields": {
+    "user": 5,
+    "choice": 11
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 21,
+  "fields": {
+    "user": 6,
+    "choice": 13
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 22,
+  "fields": {
+    "user": 6,
+    "choice": 8
+  }
+}
+]
