@@ -1,0 +1,13 @@
+[run]
+# measure branch coverage
+branch = True
+# omit uninteresting files
+omit =
+    mysite/*
+    polls/__init__.py
+    polls/migrations/*
+    polls/templates/*
+    polls/tests/
+    polls/admin.py
+    polls/apps.py
+    manage.py
